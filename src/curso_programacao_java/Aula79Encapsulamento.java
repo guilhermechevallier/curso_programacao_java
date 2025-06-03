@@ -3,9 +3,9 @@ package curso_programacao_java;
 import java.util.Locale;
 import java.util.Scanner;
 
-import entities.Product76;
+import entities.Aula79EntiEnca;
 
-public class Aula76Construtores {
+public class Aula79Encapsulamento {
 
 	public static void main(String[] args) {
 		
@@ -18,10 +18,13 @@ public class Aula76Construtores {
 		System.out.print("Price: ");
 		double price = sc.nextDouble();
 		
-		Product76 product = new Product76(name, price);
+		Aula79EntiEnca product = new Aula79EntiEnca(name, price);
 		
-		//CONSTRUCTOR PADRAO;
-		Product76 p = new Product76();
+		product.setName("ps5");
+		System.out.println("novo nome " + product.getName());
+		product.setPrice(1000);
+		System.out.println("novo nome " + product.getPrice());
+		System.out.println("novo nome " + product.getQuantity());
 		
 		System.out.println("Product data: " + product);
 		
