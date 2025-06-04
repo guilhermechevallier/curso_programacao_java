@@ -38,7 +38,7 @@ public class ProgramBank {
                     login.fazerLogin(contas);
                     break;
                 case 3:
-                    System.out.println("👋 Encerrando programa...");
+                    System.out.println("👋 Programa Encerrado...");
                     break;
                 default:
                     System.out.println("❌ Opção inválida.");

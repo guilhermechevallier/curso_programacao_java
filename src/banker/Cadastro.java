@@ -15,7 +15,7 @@ public class Cadastro {
 	//CADASTRA UMA NOVA CONTA CASO O NUMERO DA CONTA AINDA NAO EXISTA;
 	public void cadastrar(List<Bank> contas) {
 		System.out.println("\n --- Cadastro de Conta");
-		System.out.println("Número da conta: ");
+		System.out.print("Número da conta: ");
 		String numero = scanner.nextLine();
 		
 		//VERIFICA SE O NUMERO E EXISTENTE;

@@ -19,6 +19,8 @@ public class Login {
 		 System.out.print("Senha: ");
 		 String senha = scanner.nextLine();
 		 
+		 int option;
+		 
 		 for (Bank conta : contas) {
 			 if (conta.getNumeroConta().equals(numero) && conta.verificarSenha(senha)) {
 				 
@@ -26,27 +28,41 @@ public class Login {
 				 System.out.println("💰 Saldo atual: R$ " + conta.getSaldo());
 				 System.out.println();
 				 
-				 System.out.println("===========================");
-				 System.out.println("DEPOSITAR ?");
-				 System.out.println("[1]SIM / [2] NAO");
+				 int resp;
 				 
-				 int option = scanner.nextInt();
-				 
-				 switch(option){
-				 case 1:
-					 System.out.println("Depositar qual o valor do deposito");
-					 double money = Double.parseDouble(scanner.nextLine());
+				 do {
+					 System.out.println("===========================");
+					 System.out.println("DEPOSITAR OU SACAR?");
+					 System.out.print("[1] DEPOSITAR / [2] SACAR / [3] SAIR : ");
 					 
-					 Bank addCash = new Bank();
-					 addCash.depositar(money); 
+					 resp = Integer.parseInt(scanner.nextLine());
 					 
-					 System.out.printf("%s, 💰 Saldo atual: R$ %.2f%n", conta.getNome(), conta.getSaldo());
+					 switch(resp){
+						 case 1:
+							 System.out.print("Depositar qual o valor do deposito: $ ");
+							 double money = Double.parseDouble(scanner.nextLine());
+							 
+							 conta.depositar(money); 					 
+							 
+							 System.out.printf("%s, 💰 Saldo atual: R$ %.2f%n", conta.getNome(), conta.getSaldo());
+							 
+							 break;
+						 case 2:
+							 System.out.print("qual o valor de saque (taxa de $ 5.0) ? $ ");
+							 double smoney = Double.parseDouble(scanner.nextLine());
+							 
+							 conta.sacar(smoney); 					 
+							 
+							 System.out.printf("%s, 💰 Saldo atual: R$ %.2f%n", conta.getNome(), conta.getSaldo());
+							 
+						 case 3: 
+							 break;
+							 
+						 default:
+							 resp = 3;
+					 }
 					 
-					 break;
-				 case 2:
-					 System.out.println("O QUE DESEJA FAZER AGORA?");
-				 }
-				 
+				 } while (resp != 3);	 
 				 
 				 return;
 			 }

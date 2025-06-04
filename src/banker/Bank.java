@@ -12,7 +12,7 @@ public class Bank {
 		this.numeroConta = numeroConta;
 		this.name = nome;
 		this.senha = senha;
-		this.saldo = saldoInicial;
+		depositar(saldoInicial);
 	}
 	
 	public Bank() {
